@@ -1,0 +1,25 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/css text/javascript application/x-javascript application/javascript text/x-component text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
+</IfModule>
+
+RewriteRule ^img/.*$ - [PT]
+RewriteRule ^cron/.*$ - [PT]
+RewriteRule ^supplier-image-folder/.*$ - [PT]
+RewriteRule ^js/.*$ - [PT]
+RewriteRule ^images/.*$ - [PT]
+RewriteRule ^css/.*$ - [PT]
+RewriteRule ^user-avatars/.*$ - [PT]
+RewriteRule ^includes/*.$ - [PT]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\..+$
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule (.*) %BASEURL% [R=301,L]
+
+RewriteRule ^(.*)/(.*)/$ /cms.php?v1=$1&v2=$2 [NC,L]
+RewriteRule ^(.*)/$ /cms.php?v1=$1 [NC,L]
+
+DirectoryIndex index.php

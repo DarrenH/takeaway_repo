@@ -1,0 +1,1 @@
+<tag name="cookie-policy-content" description="The_main_content_on_the_cookie_policy_page" type="content" />

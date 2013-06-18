@@ -1,0 +1,1 @@
+<tag name="tandc-content" description="The_main_content_on_the_terms_and_conditions_page" type="content" />

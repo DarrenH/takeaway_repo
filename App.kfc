@@ -1,0 +1,143 @@
+<?php
+//****************************************************************************//
+//   Application : TheKore Content Management                                 //
+//   Filename : App.kfc                                                       //
+//   Description : Configoration file for Sypda Web Design CMS Application    //
+//   Author : Darren Hiles                                                    //
+//   ©Spyda 2008 All Rights Reserved                                          //
+//****************************************************************************//
+
+    putenv("TZ=Europe/London");
+    define('VERSION', '2.0.1 - PHDN');
+    define('SITESETTINGS','settings');
+    define('DBUSERTABLE','user');
+
+    define('SERVER_ROOT',$_SERVER['DOCUMENT_ROOT'] . '/');
+    define('SITE_PATH', 'http://'.$_SERVER['HTTP_HOST'].'/');
+    $parts = explode('.', SITE_PATH);
+    $parts[0] = 'http://imgs';
+    define('IMAGE_SITE_PATH', implode('.', $parts));
+    define('SITE_NAME','%SITENAME%');
+    define('ADMIN_FOLDER','admin/');
+    $ref = $_SERVER['HTTP_REFERER'];
+    if (strpos($ref, '%REF%') === false)
+    {
+        define('REFERING_PAGE', '');
+    }
+    else
+    {
+        define('REFERING_PAGE', $ref);
+    }
+    unset($ref);
+
+        //Define Database Constants
+	define('DBPAGETEXT', 'pagetexts');
+	define('DBCATEGORYTABLE', 'categories');
+	define('DBPAGETABLE', 'pages');
+	define('DBPAGECONTENTTABLE', 'content');
+    define('DBFILETABLE','file');
+    define('DBFILEIDTABLE', 'fileid');
+    define('DBFILEFOLDERSTABLE','filefolders');
+    define('DBFILEFOLDERSIDTABLE', 'filefoldersid');
+    define('DBFILELINKTABLE', 'filelink');
+    define('DBAUTHORISATIONTABLE','folderauthorisation');
+    define('DBAREASTABLE', 'areas');
+	define('DBPORTFOLIOTABLE', 'portfolioitems');
+	define('DBPORTFOLIOIMAGESTABLE', 'piimages');
+    define('DBSECURITYLVLTABLE', 'seclevels');
+    define('DBSECTIONSTABLE', 'sections');
+    define('DBLINKTABLE','link');
+    define('DBUSERTABLE','user');
+    define('DBMENUTABLE', 'mainmenu');
+    define('DBOLMENUCATEGORYTABLE', 'menu_categories');    
+    define('DBOLMENUTABLE', 'menu');
+    define('DBOLMENUITEMSTABLE', 'menu_item');
+    define('DBITEMMULTIPLEPRICETABLE', 'menu_item_multiple_pricing');
+    define('DBMENUITEMEXTRASTABLE', 'menu_item_extras');
+    define('DBMENUITEMCHOICETABLE', 'menu_item_xor_choices');
+    define('DBDLMENUSTABLE', 'dlmenus');
+    define('DBSUPPLIERSTABLE', 'supplier');
+    define('DBMENUSTABLE', 'menus');
+    define('DBGUIDESTABLE', 'guides');
+    define('DBCUISINETYPESTABLE', 'cuisine_types');
+    define('DBFTFCOMPETITIONTABLE', 'ftfcompetition');
+    define('DBOFFERSTABLE', 'offers');
+    define('DBSLIDESHOWTABLE', 'slideshow');
+    define('DBINDIVIDUALITEMSTABLE', 'items');
+    define('DBSTORETABLE', 'stores');
+    define('DBSTORELOCATIONTABLE', 'store_locations');
+    define('DBWIDGETTABLE', 'widgets');
+    define('DBPWLINKTABLE', 'forgotten_passwords_link');
+    define('DBEMAILTOSENDTABLE', 'mailqueue');
+    define('DBEMAILSENTTABLE', 'sentmail');
+    define('DBSOCNETTABLE', 'social_networking');
+    define('DBBASKETTABLE', 'basket');
+    define('DBBASKETITEMSTABLE', 'basket_items');
+    define('DBBASKETEXTRAITEMSTABLE', 'basket_items_extra');
+    define('DBBASKETCHOICEITEMSTABLE', 'basket_items_choices');
+    define('DBORDERHEADERTABLE', 'orders');
+    define('DBORDERITEMSTABLE', 'order_items');
+    define('DBORDERITEMEXTRASTABLE', 'order_items_extra');
+    define('DBORDERITEMCHOICESTABLE', 'order_items_choices');
+    define('DBRATINGSTABLE', 'ratings');
+    define('DBREVIEWSTABLE', 'reviews');
+    define('DBFEATUREDIMAGESTABLE', 'featured_images');
+    define('DBFEATUREDIMAGETYPESTABLE', 'featured_image_types');
+    define('DBSTOREDELIVERYAREASTABLE', 'delivery_areas');
+    define('DBSTOREDELIVERYTYPETABLE', 'store_delivery_type');
+    define('DBSTOREDELIVERYINFOTABLE', 'store_delivery_info');
+    define('DBSPECIALOFFERSTABLE', 'special_offers');
+    define('DBTOWNSTABLE', 'towns');
+    define('DBVOUCHERNUMBERTABLE', 'voucher_number');
+    define('DBDOWNLOADDETAILSTABLE', 'download_details');
+    define('DBRATINGSCATSTABLE', 'rating_cats');
+    define('DBUSERFAVOURITESTABLE', 'favourites');
+    define('DBREFERENCENOTABLE', 'order_reference');
+    define('DBTEMPUSERTABLE', 'temp_users');
+    define('DBSTOREOPENINGHOURSTABLE', 'opening_hours');
+    define('DBSAVEDSEARCHESTABLE', 'saved_searches');
+    define('DBADVERTSTABLE', 'adverts');
+    define('DBUSERSAVEDORDERSTABLE', 'saved_orders');
+    define('DBSITEIMAGESTABLE', 'site_featured_images');
+    define('DBOLMASTERMENUITEMSTABLE', 'master_menu_item');
+    define('DBOLMASTERMENUCATEGORYTABLE', 'master_menu_categories');
+    define('DBMASTEREXTRACATEGORYTABLE', 'master_extra_categories');
+    define('DBMASTEREXTRAITEMSTABLE', 'master_extra_items');
+    define('DBVISITORLOGTABLE', 'store_visitor_log');
+    define('DBMAINTABSTABLE', 'main_tab_list');
+    DEFINE('DBBASKETINFOTABLE', 'basket_info');
+	if (SITE_NAME)
+	{
+		define('DEFAULTIMGALTTEXT', SITE_NAME . ' - ');
+	}
+	else
+	{
+	    define('DEFAULTIMGALTTEXT','PHDN');
+	}
+
+	define('TPLFOLDER', 'includes/stpl/');
+	define('MAXIMGWIDTH', 100700);
+	define('MAXIMGHEIGHT', 100700);
+
+    define("HASHKEY", '%HASH1%');
+    define("SOFTHASHKEY", '%HASH2%');
+
+    define("SITE_OWNER_EMAIL", 'darren@phdn.co.uk');
+
+    //define("FORGOTTEN_PASSWORD_MAIL", "Dear [NAME],<br /><br />A request has beeen made at " . SITE_NAME . " to reset your password.<br /><br />If you wish to reset your password please click the following link (or paste it into your browser) :-<br /><br />[URL]<br /><br />If you did not request this reset mail please ignore it or contact us at " . SITE_PATH . "contact_us/<br /><br />Thanks,<br />" . SITE_NAME);
+
+    define("RESET_PASSWORD_PAGE", 'reset_password/');
+
+    define("GAPI_KEY", 'ABQIAAAAqTw5Uh1_tgyFa4tCTcMCuRTceP0IxEYynaX5EisuM8JCO8FuthTyjKMLEwQ6V_T6pneQ8DRpOb5-zQ');
+
+    define("PCODE_REGEX", "^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR 0AA)$");
+
+    define("MAX_DELIVERY_RADIUS", 3);
+
+    define("VIEW_ORDER", "view-order/");
+    define("SAVE_ORDER", "save-order/");
+    define("REUSE_ORDER", "reuse-order/");
+    define("MARK_COMPLETED", "mark-complete/");
+
+    define('VAT_RATE', 17.5);
+?>

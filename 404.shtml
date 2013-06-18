@@ -1,0 +1,6 @@
+Requested URL: <!--#echo var="REQUEST_URI" --><!--#echo var="HTTP_REFERER" --> 
+Referrer: <!--#echo var="HTTP_REFERER" -->
+Status: <!--#echo var="REDIRECT_STATUS" -->
+<!-- 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+--> 

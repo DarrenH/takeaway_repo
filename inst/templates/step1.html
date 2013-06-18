@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Online Ordering System Install</title>
+		<meta charset="utf8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+		<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+		<link href="../css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="bg" class="container-fluid">
+			<a name="top"></a>
+			<header id="header" class="row-fluid">
+				<div class="span12">
+					<h1>Installation Part 1</h1>
+					<p>Please enter the information requested below.</p>
+				</div>
+			</header>
+			<section id="main" class="row-fluid">
+				%ERROR%
+				<div class="span2">&nbsp;</div>
+				<div class="span8">
+					<form action="install.php?step=1" method="post">
+						<fieldset>
+							<legend>Site Information</legend>
+							<label for="sitename">Please enter the name of the site.</label>
+							<input type="text" name="sitename" id="sitename" value="%SITENAME%">
+							<div class="alert alert-block">
+								<p>We have prefilled this box with our best guess from the url. Please change if it is not appropriate.</p>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Order Email</legend>
+							<div class="alert alert-block">
+								<p>If you have been given a specific email for orders please enter it here. Otherwise leave blank.</p>
+							</div>
+							<label for="ordermail">Order Email Address</label>
+							<input type="text" name="orderemail" id="orderemail" value="">
+						</fieldset>
+						<input type="submit" class="btn btn-primary" id="step1sub" value="Submit">
+					</form>
+				</div>
+				<div class="span2">&nbsp;</div>
+			</section>
+		</div>
+	</body>
+</html>
